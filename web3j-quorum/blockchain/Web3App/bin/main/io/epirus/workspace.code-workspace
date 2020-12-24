@@ -1,0 +1,20 @@
+{
+    "folders": [
+		{
+			"name": "sec_lending_test",
+			"path": "../../../../../../../.."
+		},
+		{
+			"name": "demo",
+			"path": "../../../../../../../../../../Downloads/demo"
+		}
+	],
+    "settings": {
+        "files.exclude": {
+            "**/.classpath": true,
+            "**/.project": true,
+            "**/.settings": true,
+            "**/.factorypath": true
+        }
+    }
+}

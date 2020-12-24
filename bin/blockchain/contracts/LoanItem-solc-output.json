@@ -1,0 +1,28 @@
+{
+    "sources": {
+        "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanItem.sol": {
+            "ast": {
+                "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanItem.sol",
+                "exportedSymbols": {},
+                "id": 2,
+                "license": "UNLICENSED",
+                "nodeType": "SourceUnit",
+                "nodes": [
+                    {
+                        "id": 1,
+                        "literals": [
+                            "solidity",
+                            "^",
+                            "0.7",
+                            ".0"
+                        ],
+                        "nodeType": "PragmaDirective",
+                        "src": "39:23:0"
+                    }
+                ],
+                "src": "39:143:0"
+            },
+            "id": 0
+        }
+    }
+}

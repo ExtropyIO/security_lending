@@ -1,0 +1,63 @@
+{
+    "contractName": "Asset",
+    "abi": [],
+    "metadata": "{\"compiler\":{\"version\":\"0.7.5+commit.eb77ed08\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol\":\"Asset\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol\":{\"keccak256\":\"0xd2b0b20c900ceebf7a0c6722d3ae88cdbba32db0649aae4f553c3e2c4c44361d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f8e06f6d8218e25cd2421764327049db7cd1ff52ef60585e1fe24ad6e1901938\",\"dweb:/ipfs/QmRAtzD8MiC78e73VBo1RuXsjTzZtgN22DeF3wzZhsYEAq\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea2646970667358221220e8d085fa68860358be761d7d630dca13f6adf76c1487aeefc96cfeab9018c49664736f6c63430007050033",
+    "deployedBytecode": "6080604052600080fdfea2646970667358221220e8d085fa68860358be761d7d630dca13f6adf76c1487aeefc96cfeab9018c49664736f6c63430007050033",
+    "sourceMap": "64:17:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "64:17:0:-:0;;;;;",
+    "sourcePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.7.5+commit.eb77ed08"
+    },
+    "ast": {
+        "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol",
+        "exportedSymbols": {
+            "Asset": [
+                2
+            ]
+        },
+        "id": 3,
+        "license": "UNLICENSED",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.7",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "39:23:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 2,
+                "linearizedBaseContracts": [
+                    2
+                ],
+                "name": "Asset",
+                "nodeType": "ContractDefinition",
+                "nodes": [],
+                "scope": 3,
+                "src": "64:17:0"
+            }
+        ],
+        "src": "39:43:0"
+    },
+    "functionHashes": {},
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "12600",
+            "executionCost": "66",
+            "totalCost": "12666"
+        }
+    }
+}

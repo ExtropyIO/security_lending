@@ -1,0 +1,45 @@
+=============== Dec 2, 2020 (GMT) ===============
+16:19:05.863956 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:19:05.907509 db@open opening
+16:19:05.914166 version@stat F·[] S·0B[] Sc·[]
+16:19:05.955695 db@janitor F·2 G·0
+16:19:05.955788 db@open done T·48.194129ms
+16:19:05.957979 db@close closing
+16:19:05.958238 db@close done T·255.921µs
+=============== Dec 2, 2020 (GMT) ===============
+16:38:36.685553 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+16:38:36.754079 version@stat F·[] S·0B[] Sc·[]
+16:38:36.758741 db@open opening
+16:38:36.762886 journal@recovery F·1
+16:38:36.779737 journal@recovery recovering @1
+16:38:36.895064 memdb@flush created L0@2 N·18 S·1KiB "H\xb8\x9f..*\x87\x8e,v11":"\xeef!..\x97DC,v6"
+16:38:36.903530 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+16:38:37.088358 db@janitor F·3 G·0
+16:38:37.088474 db@open done T·325.84474ms
+=============== Dec 3, 2020 (GMT) ===============
+17:49:23.457019 db@close closing
+17:49:23.474304 db@close done T·18.435515ms
+=============== Dec 9, 2020 (GMT) ===============
+11:05:12.315696 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:05:12.318723 version@stat F·[1] S·1KiB[1KiB] Sc·[0.25]
+11:05:12.318831 db@open opening
+11:05:12.319042 journal@recovery F·1
+11:05:12.330125 journal@recovery recovering @3
+11:05:12.366642 memdb@flush created L0@5 N·3 S·269B "Dat..ion,v21":"quo..ive,v20"
+11:05:12.375997 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
+11:05:12.515534 db@janitor F·4 G·0
+11:05:12.531124 db@open done T·212.249508ms
+14:29:20.195977 db@close closing
+14:29:20.204818 db@close done T·9.895667ms
+=============== Dec 9, 2020 (GMT) ===============
+15:43:58.446889 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:43:58.448736 version@stat F·[2] S·1KiB[1KiB] Sc·[0.50]
+15:43:58.448817 db@open opening
+15:43:58.449032 journal@recovery F·1
+15:43:58.460004 journal@recovery recovering @6
+15:43:58.493445 memdb@flush created L0@8 N·1 S·216B "Las..der,v24":"Las..der,v24"
+15:43:58.500438 version@stat F·[3] S·1KiB[1KiB] Sc·[0.75]
+15:43:58.592299 db@janitor F·5 G·0
+15:43:58.593040 db@open done T·144.190468ms
+20:44:16.030505 db@close closing
+20:44:16.036914 db@close done T·6.403133ms

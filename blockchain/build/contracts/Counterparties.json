@@ -1,0 +1,1715 @@
+{
+  "contractName": "Counterparties",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "string",
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "indexed": true,
+          "internalType": "enum Counterparties.CreditRating",
+          "name": "rating",
+          "type": "uint8"
+        }
+      ],
+      "name": "CounterpartyCreated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "enum Counterparties.CreditRating",
+          "name": "_rating",
+          "type": "uint8"
+        }
+      ],
+      "name": "createCounterparty",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getNumberOfCounterparties",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        }
+      ],
+      "name": "getCounterpartyRatingByName",
+      "outputs": [
+        {
+          "internalType": "enum Counterparties.CreditRating",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"indexed\":true,\"internalType\":\"enum Counterparties.CreditRating\",\"name\":\"rating\",\"type\":\"uint8\"}],\"name\":\"CounterpartyCreated\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"enum Counterparties.CreditRating\",\"name\":\"_rating\",\"type\":\"uint8\"}],\"name\":\"createCounterparty\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"}],\"name\":\"getCounterpartyRatingByName\",\"outputs\":[{\"internalType\":\"enum Counterparties.CreditRating\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getNumberOfCounterparties\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Counterparties.sol\":\"Counterparties\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Counterparties.sol\":{\"keccak256\":\"0x231dc81c0156588b22b704a61104fbfca5171677fc84e378152f930139f9f28a\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://38f707afd4430e84f3c65376dc552f17dc2f34261de0b9513d64d3e0d0ba1c98\",\"dweb:/ipfs/QmZdSF8BJ3oi37TxnvmF9jm26mpmDxMRRkbqk2ZBnWrLjC\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610442806100206000396000f3fe608060405234801561001057600080fd5b506004361061005e576000357c010000000000000000000000000000000000000000000000000000000090048063263d495c146100635780636d726d4d14610081578063b30f439d14610149575b600080fd5b61006b610223565b6040518082815260200191505060405180910390f35b6101476004803603604081101561009757600080fd5b81019080803590602001906401000000008111156100b457600080fd5b8201836020820111156100c657600080fd5b803590602001918460018302840111640100000000831117156100e857600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff16906020019092919050505061022c565b005b6102026004803603602081101561015f57600080fd5b810190808035906020019064010000000081111561017c57600080fd5b82018360208201111561018e57600080fd5b803590602001918460018302840111640100000000831117156101b057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610389565b6040518082600981111561021257fe5b815260200191505060405180910390f35b60008054905090565b604051806020016040528082600981111561024357fe5b8152506001836040518082805190602001908083835b6020831061027c5780518252602082019150602081019050602083039250610259565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060008201518160000160006101000a81548160ff021916908360098111156102d357fe5b021790555090505060008081548092919060010191905055508060098111156102f857fe5b826040518082805190602001908083835b6020831061032c5780518252602082019150602081019050602083039250610309565b6001836020036101000a03801982511681845116808217855250505050505090500191505060405180910390207f50a0d78af8a4e82ca6fb87da95830b6b5eba3b91da2e77ac5da535066c7f897760405160405180910390a35050565b60006001826040518082805190602001908083835b602083106103c1578051825260208201915060208101905060208303925061039e565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060000160009054906101000a900460ff16905091905056fea2646970667358221220d02a8b2c17cee1de45c10dbad104494ff4603c4cb33fd71575e3e4edd8218c8664736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061005e576000357c010000000000000000000000000000000000000000000000000000000090048063263d495c146100635780636d726d4d14610081578063b30f439d14610149575b600080fd5b61006b610223565b6040518082815260200191505060405180910390f35b6101476004803603604081101561009757600080fd5b81019080803590602001906401000000008111156100b457600080fd5b8201836020820111156100c657600080fd5b803590602001918460018302840111640100000000831117156100e857600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff16906020019092919050505061022c565b005b6102026004803603602081101561015f57600080fd5b810190808035906020019064010000000081111561017c57600080fd5b82018360208201111561018e57600080fd5b803590602001918460018302840111640100000000831117156101b057600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290505050610389565b6040518082600981111561021257fe5b815260200191505060405180910390f35b60008054905090565b604051806020016040528082600981111561024357fe5b8152506001836040518082805190602001908083835b6020831061027c5780518252602082019150602081019050602083039250610259565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060008201518160000160006101000a81548160ff021916908360098111156102d357fe5b021790555090505060008081548092919060010191905055508060098111156102f857fe5b826040518082805190602001908083835b6020831061032c5780518252602082019150602081019050602083039250610309565b6001836020036101000a03801982511681845116808217855250505050505090500191505060405180910390207f50a0d78af8a4e82ca6fb87da95830b6b5eba3b91da2e77ac5da535066c7f897760405160405180910390a35050565b60006001826040518082805190602001908083835b602083106103c1578051825260208201915060208101905060208303925061039e565b6001836020036101000a038019825116818451168082178552505050505050905001915050908152602001604051809103902060000160009054906101000a900460ff16905091905056fea2646970667358221220d02a8b2c17cee1de45c10dbad104494ff4603c4cb33fd71575e3e4edd8218c8664736f6c63430007040033",
+  "immutableReferences": {},
+  "sourceMap": "64:871:1:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "64:871:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;639:113;;;:::i;:::-;;;;;;;;;;;;;;;;;;;387:246;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;758:175;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;639:113;699:7;725:20;;718:27;;639:113;:::o;387:246::-;513:31;;;;;;;;535:7;513:31;;;;;;;;;;;489:14;504:5;489:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:55;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;554:20;;:22;;;;;;;;;;;;;618:7;591:35;;;;;;;;611:5;591:35;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;387:246;;:::o;758:175::-;863:12;898:14;913:5;898:21;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;891:35;;758:175;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.7.0;\n\ncontract Counterparties {\n    enum CreditRating {AAA, AA, A, BBB, BB, B, CCC, CC, C, D}\n\n    struct Counterparty {\n        CreditRating rating;\n    }\n    uint256 numberCounterparties;\n    mapping(string => Counterparty) counterparties;\n\n    event CounterpartyCreated(string indexed name, CreditRating indexed rating);\n\n    function createCounterparty(string memory _name, CreditRating _rating)\n        external\n    {\n        counterparties[_name] = Counterparty({rating: _rating});\n        numberCounterparties++;\n        emit CounterpartyCreated(_name, _rating);\n    }\n\n    function getNumberOfCounterparties() external view returns (uint256) {\n        return numberCounterparties;\n    }\n\n    function getCounterpartyRatingByName(string memory _name)\n        external\n        view\n        returns (CreditRating)\n    {\n        return counterparties[_name].rating;\n    }\n}\n",
+  "sourcePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Counterparties.sol",
+  "ast": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Counterparties.sol",
+    "exportedSymbols": {
+      "Counterparties": [
+        130
+      ]
+    },
+    "id": 131,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 130,
+        "linearizedBaseContracts": [
+          130
+        ],
+        "name": "Counterparties",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Counterparties.CreditRating",
+            "id": 69,
+            "members": [
+              {
+                "id": 59,
+                "name": "AAA",
+                "nodeType": "EnumValue",
+                "src": "113:3:1"
+              },
+              {
+                "id": 60,
+                "name": "AA",
+                "nodeType": "EnumValue",
+                "src": "118:2:1"
+              },
+              {
+                "id": 61,
+                "name": "A",
+                "nodeType": "EnumValue",
+                "src": "122:1:1"
+              },
+              {
+                "id": 62,
+                "name": "BBB",
+                "nodeType": "EnumValue",
+                "src": "125:3:1"
+              },
+              {
+                "id": 63,
+                "name": "BB",
+                "nodeType": "EnumValue",
+                "src": "130:2:1"
+              },
+              {
+                "id": 64,
+                "name": "B",
+                "nodeType": "EnumValue",
+                "src": "134:1:1"
+              },
+              {
+                "id": 65,
+                "name": "CCC",
+                "nodeType": "EnumValue",
+                "src": "137:3:1"
+              },
+              {
+                "id": 66,
+                "name": "CC",
+                "nodeType": "EnumValue",
+                "src": "142:2:1"
+              },
+              {
+                "id": 67,
+                "name": "C",
+                "nodeType": "EnumValue",
+                "src": "146:1:1"
+              },
+              {
+                "id": 68,
+                "name": "D",
+                "nodeType": "EnumValue",
+                "src": "149:1:1"
+              }
+            ],
+            "name": "CreditRating",
+            "nodeType": "EnumDefinition",
+            "src": "94:57:1"
+          },
+          {
+            "canonicalName": "Counterparties.Counterparty",
+            "id": 72,
+            "members": [
+              {
+                "constant": false,
+                "id": 71,
+                "mutability": "mutable",
+                "name": "rating",
+                "nodeType": "VariableDeclaration",
+                "scope": 72,
+                "src": "187:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_CreditRating_$69",
+                  "typeString": "enum Counterparties.CreditRating"
+                },
+                "typeName": {
+                  "id": 70,
+                  "name": "CreditRating",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 69,
+                  "src": "187:12:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Counterparty",
+            "nodeType": "StructDefinition",
+            "scope": 130,
+            "src": "157:56:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 74,
+            "mutability": "mutable",
+            "name": "numberCounterparties",
+            "nodeType": "VariableDeclaration",
+            "scope": 130,
+            "src": "218:28:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 73,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "218:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 78,
+            "mutability": "mutable",
+            "name": "counterparties",
+            "nodeType": "VariableDeclaration",
+            "scope": 130,
+            "src": "252:46:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+              "typeString": "mapping(string => struct Counterparties.Counterparty)"
+            },
+            "typeName": {
+              "id": 77,
+              "keyType": {
+                "id": 75,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "260:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "252:31:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+                "typeString": "mapping(string => struct Counterparties.Counterparty)"
+              },
+              "valueType": {
+                "id": 76,
+                "name": "Counterparty",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 72,
+                "src": "270:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Counterparty_$72_storage_ptr",
+                  "typeString": "struct Counterparties.Counterparty"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "id": 84,
+            "name": "CounterpartyCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 83,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84,
+                  "src": "331:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "331:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 82,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "rating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84,
+                  "src": "352:27:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  },
+                  "typeName": {
+                    "id": 81,
+                    "name": "CreditRating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "352:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "330:50:1"
+            },
+            "src": "305:76:1"
+          },
+          {
+            "body": {
+              "id": 107,
+              "nodeType": "Block",
+              "src": "479:154:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 97,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 91,
+                        "name": "counterparties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 78,
+                        "src": "489:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+                          "typeString": "mapping(string memory => struct Counterparties.Counterparty storage ref)"
+                        }
+                      },
+                      "id": 93,
+                      "indexExpression": {
+                        "id": 92,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 86,
+                        "src": "504:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "489:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Counterparty_$72_storage",
+                        "typeString": "struct Counterparties.Counterparty storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 95,
+                          "name": "_rating",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 88,
+                          "src": "535:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CreditRating_$69",
+                            "typeString": "enum Counterparties.CreditRating"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_enum$_CreditRating_$69",
+                            "typeString": "enum Counterparties.CreditRating"
+                          }
+                        ],
+                        "id": 94,
+                        "name": "Counterparty",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 72,
+                        "src": "513:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Counterparty_$72_storage_ptr_$",
+                          "typeString": "type(struct Counterparties.Counterparty storage pointer)"
+                        }
+                      },
+                      "id": 96,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "rating"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "513:31:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Counterparty_$72_memory_ptr",
+                        "typeString": "struct Counterparties.Counterparty memory"
+                      }
+                    },
+                    "src": "489:55:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Counterparty_$72_storage",
+                      "typeString": "struct Counterparties.Counterparty storage ref"
+                    }
+                  },
+                  "id": 98,
+                  "nodeType": "ExpressionStatement",
+                  "src": "489:55:1"
+                },
+                {
+                  "expression": {
+                    "id": 100,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "554:22:1",
+                    "subExpression": {
+                      "id": 99,
+                      "name": "numberCounterparties",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "554:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 101,
+                  "nodeType": "ExpressionStatement",
+                  "src": "554:22:1"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 103,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 86,
+                        "src": "611:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 104,
+                        "name": "_rating",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 88,
+                        "src": "618:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_CreditRating_$69",
+                          "typeString": "enum Counterparties.CreditRating"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_CreditRating_$69",
+                          "typeString": "enum Counterparties.CreditRating"
+                        }
+                      ],
+                      "id": 102,
+                      "name": "CounterpartyCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 84,
+                      "src": "591:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_enum$_CreditRating_$69_$returns$__$",
+                        "typeString": "function (string memory,enum Counterparties.CreditRating)"
+                      }
+                    },
+                    "id": 105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "591:35:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 106,
+                  "nodeType": "EmitStatement",
+                  "src": "586:40:1"
+                }
+              ]
+            },
+            "functionSelector": "6d726d4d",
+            "id": 108,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createCounterparty",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 89,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 86,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 108,
+                  "src": "415:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 85,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 88,
+                  "mutability": "mutable",
+                  "name": "_rating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 108,
+                  "src": "436:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  },
+                  "typeName": {
+                    "id": 87,
+                    "name": "CreditRating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "436:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "414:43:1"
+            },
+            "returnParameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "479:0:1"
+            },
+            "scope": 130,
+            "src": "387:246:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 115,
+              "nodeType": "Block",
+              "src": "708:44:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 113,
+                    "name": "numberCounterparties",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 74,
+                    "src": "725:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 112,
+                  "id": 114,
+                  "nodeType": "Return",
+                  "src": "718:27:1"
+                }
+              ]
+            },
+            "functionSelector": "263d495c",
+            "id": 116,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNumberOfCounterparties",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 109,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "673:2:1"
+            },
+            "returnParameters": {
+              "id": 112,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 116,
+                  "src": "699:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 110,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "699:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "698:9:1"
+            },
+            "scope": 130,
+            "src": "639:113:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 128,
+              "nodeType": "Block",
+              "src": "881:52:1",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "baseExpression": {
+                        "id": 123,
+                        "name": "counterparties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 78,
+                        "src": "898:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+                          "typeString": "mapping(string memory => struct Counterparties.Counterparty storage ref)"
+                        }
+                      },
+                      "id": 125,
+                      "indexExpression": {
+                        "id": 124,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 118,
+                        "src": "913:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "898:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Counterparty_$72_storage",
+                        "typeString": "struct Counterparties.Counterparty storage ref"
+                      }
+                    },
+                    "id": 126,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "rating",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 71,
+                    "src": "898:28:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "functionReturnParameters": 122,
+                  "id": 127,
+                  "nodeType": "Return",
+                  "src": "891:35:1"
+                }
+              ]
+            },
+            "functionSelector": "b30f439d",
+            "id": 129,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCounterpartyRatingByName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 118,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "795:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "795:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "794:21:1"
+            },
+            "returnParameters": {
+              "id": 122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 121,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "863:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  },
+                  "typeName": {
+                    "id": 120,
+                    "name": "CreditRating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "863:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "862:14:1"
+            },
+            "scope": 130,
+            "src": "758:175:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 131,
+        "src": "64:871:1"
+      }
+    ],
+    "src": "39:897:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Counterparties.sol",
+    "exportedSymbols": {
+      "Counterparties": [
+        130
+      ]
+    },
+    "id": 131,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 130,
+        "linearizedBaseContracts": [
+          130
+        ],
+        "name": "Counterparties",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Counterparties.CreditRating",
+            "id": 69,
+            "members": [
+              {
+                "id": 59,
+                "name": "AAA",
+                "nodeType": "EnumValue",
+                "src": "113:3:1"
+              },
+              {
+                "id": 60,
+                "name": "AA",
+                "nodeType": "EnumValue",
+                "src": "118:2:1"
+              },
+              {
+                "id": 61,
+                "name": "A",
+                "nodeType": "EnumValue",
+                "src": "122:1:1"
+              },
+              {
+                "id": 62,
+                "name": "BBB",
+                "nodeType": "EnumValue",
+                "src": "125:3:1"
+              },
+              {
+                "id": 63,
+                "name": "BB",
+                "nodeType": "EnumValue",
+                "src": "130:2:1"
+              },
+              {
+                "id": 64,
+                "name": "B",
+                "nodeType": "EnumValue",
+                "src": "134:1:1"
+              },
+              {
+                "id": 65,
+                "name": "CCC",
+                "nodeType": "EnumValue",
+                "src": "137:3:1"
+              },
+              {
+                "id": 66,
+                "name": "CC",
+                "nodeType": "EnumValue",
+                "src": "142:2:1"
+              },
+              {
+                "id": 67,
+                "name": "C",
+                "nodeType": "EnumValue",
+                "src": "146:1:1"
+              },
+              {
+                "id": 68,
+                "name": "D",
+                "nodeType": "EnumValue",
+                "src": "149:1:1"
+              }
+            ],
+            "name": "CreditRating",
+            "nodeType": "EnumDefinition",
+            "src": "94:57:1"
+          },
+          {
+            "canonicalName": "Counterparties.Counterparty",
+            "id": 72,
+            "members": [
+              {
+                "constant": false,
+                "id": 71,
+                "mutability": "mutable",
+                "name": "rating",
+                "nodeType": "VariableDeclaration",
+                "scope": 72,
+                "src": "187:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_CreditRating_$69",
+                  "typeString": "enum Counterparties.CreditRating"
+                },
+                "typeName": {
+                  "id": 70,
+                  "name": "CreditRating",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 69,
+                  "src": "187:12:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Counterparty",
+            "nodeType": "StructDefinition",
+            "scope": 130,
+            "src": "157:56:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 74,
+            "mutability": "mutable",
+            "name": "numberCounterparties",
+            "nodeType": "VariableDeclaration",
+            "scope": 130,
+            "src": "218:28:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint256",
+              "typeString": "uint256"
+            },
+            "typeName": {
+              "id": 73,
+              "name": "uint256",
+              "nodeType": "ElementaryTypeName",
+              "src": "218:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint256",
+                "typeString": "uint256"
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "constant": false,
+            "id": 78,
+            "mutability": "mutable",
+            "name": "counterparties",
+            "nodeType": "VariableDeclaration",
+            "scope": 130,
+            "src": "252:46:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+              "typeString": "mapping(string => struct Counterparties.Counterparty)"
+            },
+            "typeName": {
+              "id": 77,
+              "keyType": {
+                "id": 75,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "260:6:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "252:31:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+                "typeString": "mapping(string => struct Counterparties.Counterparty)"
+              },
+              "valueType": {
+                "id": 76,
+                "name": "Counterparty",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 72,
+                "src": "270:12:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Counterparty_$72_storage_ptr",
+                  "typeString": "struct Counterparties.Counterparty"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "anonymous": false,
+            "id": 84,
+            "name": "CounterpartyCreated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 83,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 80,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84,
+                  "src": "331:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 79,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "331:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 82,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "rating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 84,
+                  "src": "352:27:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  },
+                  "typeName": {
+                    "id": 81,
+                    "name": "CreditRating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "352:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "330:50:1"
+            },
+            "src": "305:76:1"
+          },
+          {
+            "body": {
+              "id": 107,
+              "nodeType": "Block",
+              "src": "479:154:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 97,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 91,
+                        "name": "counterparties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 78,
+                        "src": "489:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+                          "typeString": "mapping(string memory => struct Counterparties.Counterparty storage ref)"
+                        }
+                      },
+                      "id": 93,
+                      "indexExpression": {
+                        "id": 92,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 86,
+                        "src": "504:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "489:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Counterparty_$72_storage",
+                        "typeString": "struct Counterparties.Counterparty storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 95,
+                          "name": "_rating",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 88,
+                          "src": "535:7:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_CreditRating_$69",
+                            "typeString": "enum Counterparties.CreditRating"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_enum$_CreditRating_$69",
+                            "typeString": "enum Counterparties.CreditRating"
+                          }
+                        ],
+                        "id": 94,
+                        "name": "Counterparty",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 72,
+                        "src": "513:12:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Counterparty_$72_storage_ptr_$",
+                          "typeString": "type(struct Counterparties.Counterparty storage pointer)"
+                        }
+                      },
+                      "id": 96,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "rating"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "513:31:1",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Counterparty_$72_memory_ptr",
+                        "typeString": "struct Counterparties.Counterparty memory"
+                      }
+                    },
+                    "src": "489:55:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Counterparty_$72_storage",
+                      "typeString": "struct Counterparties.Counterparty storage ref"
+                    }
+                  },
+                  "id": 98,
+                  "nodeType": "ExpressionStatement",
+                  "src": "489:55:1"
+                },
+                {
+                  "expression": {
+                    "id": 100,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "nodeType": "UnaryOperation",
+                    "operator": "++",
+                    "prefix": false,
+                    "src": "554:22:1",
+                    "subExpression": {
+                      "id": 99,
+                      "name": "numberCounterparties",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 74,
+                      "src": "554:20:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 101,
+                  "nodeType": "ExpressionStatement",
+                  "src": "554:22:1"
+                },
+                {
+                  "eventCall": {
+                    "arguments": [
+                      {
+                        "id": 103,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 86,
+                        "src": "611:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      {
+                        "id": 104,
+                        "name": "_rating",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 88,
+                        "src": "618:7:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_enum$_CreditRating_$69",
+                          "typeString": "enum Counterparties.CreditRating"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        },
+                        {
+                          "typeIdentifier": "t_enum$_CreditRating_$69",
+                          "typeString": "enum Counterparties.CreditRating"
+                        }
+                      ],
+                      "id": 102,
+                      "name": "CounterpartyCreated",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 84,
+                      "src": "591:19:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_string_memory_ptr_$_t_enum$_CreditRating_$69_$returns$__$",
+                        "typeString": "function (string memory,enum Counterparties.CreditRating)"
+                      }
+                    },
+                    "id": 105,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "591:35:1",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 106,
+                  "nodeType": "EmitStatement",
+                  "src": "586:40:1"
+                }
+              ]
+            },
+            "functionSelector": "6d726d4d",
+            "id": 108,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createCounterparty",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 89,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 86,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 108,
+                  "src": "415:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 85,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "415:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 88,
+                  "mutability": "mutable",
+                  "name": "_rating",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 108,
+                  "src": "436:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  },
+                  "typeName": {
+                    "id": 87,
+                    "name": "CreditRating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "436:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "414:43:1"
+            },
+            "returnParameters": {
+              "id": 90,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "479:0:1"
+            },
+            "scope": 130,
+            "src": "387:246:1",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 115,
+              "nodeType": "Block",
+              "src": "708:44:1",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 113,
+                    "name": "numberCounterparties",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 74,
+                    "src": "725:20:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 112,
+                  "id": 114,
+                  "nodeType": "Return",
+                  "src": "718:27:1"
+                }
+              ]
+            },
+            "functionSelector": "263d495c",
+            "id": 116,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getNumberOfCounterparties",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 109,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "673:2:1"
+            },
+            "returnParameters": {
+              "id": 112,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 111,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 116,
+                  "src": "699:7:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 110,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "699:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "698:9:1"
+            },
+            "scope": 130,
+            "src": "639:113:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 128,
+              "nodeType": "Block",
+              "src": "881:52:1",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "baseExpression": {
+                        "id": 123,
+                        "name": "counterparties",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 78,
+                        "src": "898:14:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Counterparty_$72_storage_$",
+                          "typeString": "mapping(string memory => struct Counterparties.Counterparty storage ref)"
+                        }
+                      },
+                      "id": 125,
+                      "indexExpression": {
+                        "id": 124,
+                        "name": "_name",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 118,
+                        "src": "913:5:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "898:21:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Counterparty_$72_storage",
+                        "typeString": "struct Counterparties.Counterparty storage ref"
+                      }
+                    },
+                    "id": 126,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "rating",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 71,
+                    "src": "898:28:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "functionReturnParameters": 122,
+                  "id": 127,
+                  "nodeType": "Return",
+                  "src": "891:35:1"
+                }
+              ]
+            },
+            "functionSelector": "b30f439d",
+            "id": 129,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getCounterpartyRatingByName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 118,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "795:19:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 117,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "795:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "794:21:1"
+            },
+            "returnParameters": {
+              "id": 122,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 121,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 129,
+                  "src": "863:12:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_CreditRating_$69",
+                    "typeString": "enum Counterparties.CreditRating"
+                  },
+                  "typeName": {
+                    "id": 120,
+                    "name": "CreditRating",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 69,
+                    "src": "863:12:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_CreditRating_$69",
+                      "typeString": "enum Counterparties.CreditRating"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "862:14:1"
+            },
+            "scope": 130,
+            "src": "758:175:1",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 131,
+        "src": "64:871:1"
+      }
+    ],
+    "src": "39:897:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-24T16:13:08.460Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

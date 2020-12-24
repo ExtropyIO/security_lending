@@ -1,0 +1,1622 @@
+{
+  "contractName": "Assets",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_ID",
+          "type": "string"
+        },
+        {
+          "internalType": "enum Assets.AssetType",
+          "name": "_assetType",
+          "type": "uint8"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_value",
+          "type": "uint256"
+        }
+      ],
+      "name": "addAsset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_ID",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_price",
+          "type": "uint256"
+        }
+      ],
+      "name": "markAsset",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_ID",
+          "type": "string"
+        }
+      ],
+      "name": "getAssetPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_ID\",\"type\":\"string\"},{\"internalType\":\"enum Assets.AssetType\",\"name\":\"_assetType\",\"type\":\"uint8\"},{\"internalType\":\"uint256\",\"name\":\"_value\",\"type\":\"uint256\"}],\"name\":\"addAsset\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_ID\",\"type\":\"string\"}],\"name\":\"getAssetPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_ID\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"markAsset\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Assets.sol\":\"Assets\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Assets.sol\":{\"keccak256\":\"0xc8c5184ad370ea06c96981d5606fada26472fe4b043ae93ffe72d24d989e86ff\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://abb8bb8da05a272cf5c7a5353d49aa65472321bea329aba595990d0ac6b6ca64\",\"dweb:/ipfs/QmYoUGkmWrfpcP7sBPYG3sXwGH5EGbmdixsCdghPeX482W\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061057b806100206000396000f3fe608060405234801561001057600080fd5b506004361061005e576000357c0100000000000000000000000000000000000000000000000000000000900480632aedd0eb14610063578063b5651c1d14610132578063ce72fb73146101f7575b600080fd5b61011c6004803603602081101561007957600080fd5b810190808035906020019064010000000081111561009657600080fd5b8201836020820111156100a857600080fd5b803590602001918460018302840111640100000000831117156100ca57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506102c9565b6040518082815260200191505060405180910390f35b6101f56004803603604081101561014857600080fd5b810190808035906020019064010000000081111561016557600080fd5b82018360208201111561017757600080fd5b8035906020019184600183028401116401000000008311171561019957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019092919050505061033e565b005b6102c76004803603606081101561020d57600080fd5b810190808035906020019064010000000081111561022a57600080fd5b82018360208201111561023c57600080fd5b8035906020019184600183028401116401000000008311171561025e57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff169060200190929190803590602001909291905050506103b3565b005b600080826040518082805190602001908083835b6020831061030057805182526020820191506020810190506020830392506102dd565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600201549050919050565b806000836040518082805190602001908083835b602083106103755780518252602082019150602081019050602083039250610352565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600201819055505050565b60405180606001604052808481526020018360018111156103d057fe5b8152602001828152506000846040518082805190602001908083835b6020831061040f57805182526020820191506020810190506020830392506103ec565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600082015181600001908051906020019061045e92919061049a565b5060208201518160010160006101000a81548160ff0219169083600181111561048357fe5b021790555060408201518160020155905050505050565b828054600181600116156101000203166002900490600052602060002090601f0160209004810192826104d05760008555610517565b82601f106104e957805160ff1916838001178555610517565b82800160010185558215610517579182015b828111156105165782518255916020019190600101906104fb565b5b5090506105249190610528565b5090565b5b80821115610541576000816000905550600101610529565b509056fea264697066735822122084e14e5a801c44494b1c4814e8d5ac552cb0abda07fdf246b36f44ce05dd0a7d64736f6c63430007040033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b506004361061005e576000357c0100000000000000000000000000000000000000000000000000000000900480632aedd0eb14610063578063b5651c1d14610132578063ce72fb73146101f7575b600080fd5b61011c6004803603602081101561007957600080fd5b810190808035906020019064010000000081111561009657600080fd5b8201836020820111156100a857600080fd5b803590602001918460018302840111640100000000831117156100ca57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192905050506102c9565b6040518082815260200191505060405180910390f35b6101f56004803603604081101561014857600080fd5b810190808035906020019064010000000081111561016557600080fd5b82018360208201111561017757600080fd5b8035906020019184600183028401116401000000008311171561019957600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f8201169050808301925050505050505091929192908035906020019092919050505061033e565b005b6102c76004803603606081101561020d57600080fd5b810190808035906020019064010000000081111561022a57600080fd5b82018360208201111561023c57600080fd5b8035906020019184600183028401116401000000008311171561025e57600080fd5b91908080601f016020809104026020016040519081016040528093929190818152602001838380828437600081840152601f19601f820116905080830192505050505050509192919290803560ff169060200190929190803590602001909291905050506103b3565b005b600080826040518082805190602001908083835b6020831061030057805182526020820191506020810190506020830392506102dd565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600201549050919050565b806000836040518082805190602001908083835b602083106103755780518252602082019150602081019050602083039250610352565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600201819055505050565b60405180606001604052808481526020018360018111156103d057fe5b8152602001828152506000846040518082805190602001908083835b6020831061040f57805182526020820191506020810190506020830392506103ec565b6001836020036101000a0380198251168184511680821785525050505050509050019150509081526020016040518091039020600082015181600001908051906020019061045e92919061049a565b5060208201518160010160006101000a81548160ff0219169083600181111561048357fe5b021790555060408201518160020155905050505050565b828054600181600116156101000203166002900490600052602060002090601f0160209004810192826104d05760008555610517565b82601f106104e957805160ff1916838001178555610517565b82800160010185558215610517579182015b828111156105165782518255916020019190600101906104fb565b5b5090506105249190610528565b5090565b5b80821115610541576000816000905550600101610529565b509056fea264697066735822122084e14e5a801c44494b1c4814e8d5ac552cb0abda07fdf246b36f44ce05dd0a7d64736f6c63430007040033",
+  "immutableReferences": {},
+  "sourceMap": "64:703:0:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "64:703:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;643:122;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;524:113;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;266:252;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;643:122;708:7;734:9;744:3;734:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:24;;;727:31;;643:122;;;:::o;524:113::-;624:6;597:9;607:3;597:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:24;;:33;;;;524:113;;:::o;266:252::-;407:104;;;;;;;;431:3;407:104;;;;459:10;407:104;;;;;;;;;;;;494:6;407:104;;;390:9;400:3;390:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:121;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;266:252;;;:::o;-1:-1:-1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.7.0;\n\ncontract Assets {\n    enum AssetType {Equity, Digital}\n\n    struct Asset {\n        string ID;\n        AssetType assetType;\n        uint256 lastPrice;\n    }\n\n    mapping(string => Asset) assetByID;\n\n    function addAsset(\n        string memory _ID,\n        AssetType _assetType,\n        uint256 _value\n    ) external {\n        assetByID[_ID] = Asset({\n            ID: _ID,\n            assetType: _assetType,\n            lastPrice: _value\n        });\n    }\n\n    function markAsset(string memory _ID, uint256 _price) external {\n        assetByID[_ID].lastPrice = _price;\n    }\n\n    function getAssetPrice(string memory _ID) external view returns (uint256) {\n        return assetByID[_ID].lastPrice;\n    }\n}\n",
+  "sourcePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Assets.sol",
+  "ast": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Assets.sol",
+    "exportedSymbols": {
+      "Assets": [
+        64
+      ]
+    },
+    "id": 65,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 64,
+        "linearizedBaseContracts": [
+          64
+        ],
+        "name": "Assets",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Assets.AssetType",
+            "id": 4,
+            "members": [
+              {
+                "id": 2,
+                "name": "Equity",
+                "nodeType": "EnumValue",
+                "src": "102:6:0"
+              },
+              {
+                "id": 3,
+                "name": "Digital",
+                "nodeType": "EnumValue",
+                "src": "110:7:0"
+              }
+            ],
+            "name": "AssetType",
+            "nodeType": "EnumDefinition",
+            "src": "86:32:0"
+          },
+          {
+            "canonicalName": "Assets.Asset",
+            "id": 11,
+            "members": [
+              {
+                "constant": false,
+                "id": 6,
+                "mutability": "mutable",
+                "name": "ID",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "147:9:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "147:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "mutability": "mutable",
+                "name": "assetType",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "166:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_AssetType_$4",
+                  "typeString": "enum Assets.AssetType"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "AssetType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4,
+                  "src": "166:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AssetType_$4",
+                    "typeString": "enum Assets.AssetType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "mutability": "mutable",
+                "name": "lastPrice",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "195:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "195:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Asset",
+            "nodeType": "StructDefinition",
+            "scope": 64,
+            "src": "124:95:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15,
+            "mutability": "mutable",
+            "name": "assetByID",
+            "nodeType": "VariableDeclaration",
+            "scope": 64,
+            "src": "225:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+              "typeString": "mapping(string => struct Assets.Asset)"
+            },
+            "typeName": {
+              "id": 14,
+              "keyType": {
+                "id": 12,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "233:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "225:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                "typeString": "mapping(string => struct Assets.Asset)"
+              },
+              "valueType": {
+                "id": 13,
+                "name": "Asset",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 11,
+                "src": "243:5:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Asset_$11_storage_ptr",
+                  "typeString": "struct Assets.Asset"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 34,
+              "nodeType": "Block",
+              "src": "380:138:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 32,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 24,
+                        "name": "assetByID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "390:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                          "typeString": "mapping(string memory => struct Assets.Asset storage ref)"
+                        }
+                      },
+                      "id": 26,
+                      "indexExpression": {
+                        "id": 25,
+                        "name": "_ID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "400:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "390:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$11_storage",
+                        "typeString": "struct Assets.Asset storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 28,
+                          "name": "_ID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17,
+                          "src": "431:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 29,
+                          "name": "_assetType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19,
+                          "src": "459:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_AssetType_$4",
+                            "typeString": "enum Assets.AssetType"
+                          }
+                        },
+                        {
+                          "id": 30,
+                          "name": "_value",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 21,
+                          "src": "494:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_AssetType_$4",
+                            "typeString": "enum Assets.AssetType"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 27,
+                        "name": "Asset",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11,
+                        "src": "407:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Asset_$11_storage_ptr_$",
+                          "typeString": "type(struct Assets.Asset storage pointer)"
+                        }
+                      },
+                      "id": 31,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "ID",
+                        "assetType",
+                        "lastPrice"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "407:104:0",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$11_memory_ptr",
+                        "typeString": "struct Assets.Asset memory"
+                      }
+                    },
+                    "src": "390:121:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Asset_$11_storage",
+                      "typeString": "struct Assets.Asset storage ref"
+                    }
+                  },
+                  "id": 33,
+                  "nodeType": "ExpressionStatement",
+                  "src": "390:121:0"
+                }
+              ]
+            },
+            "functionSelector": "ce72fb73",
+            "id": 35,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addAsset",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "293:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "293:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "mutability": "mutable",
+                  "name": "_assetType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "320:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AssetType_$4",
+                    "typeString": "enum Assets.AssetType"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "AssetType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4,
+                    "src": "320:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_AssetType_$4",
+                      "typeString": "enum Assets.AssetType"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "350:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "350:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "283:87:0"
+            },
+            "returnParameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "380:0:0"
+            },
+            "scope": 64,
+            "src": "266:252:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 49,
+              "nodeType": "Block",
+              "src": "587:50:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 42,
+                          "name": "assetByID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15,
+                          "src": "597:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                            "typeString": "mapping(string memory => struct Assets.Asset storage ref)"
+                          }
+                        },
+                        "id": 44,
+                        "indexExpression": {
+                          "id": 43,
+                          "name": "_ID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 37,
+                          "src": "607:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "597:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Asset_$11_storage",
+                          "typeString": "struct Assets.Asset storage ref"
+                        }
+                      },
+                      "id": 45,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lastPrice",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10,
+                      "src": "597:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 46,
+                      "name": "_price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 39,
+                      "src": "624:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "597:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 48,
+                  "nodeType": "ExpressionStatement",
+                  "src": "597:33:0"
+                }
+              ]
+            },
+            "functionSelector": "b5651c1d",
+            "id": 50,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "markAsset",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 37,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "543:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 39,
+                  "mutability": "mutable",
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "562:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 38,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "562:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "542:35:0"
+            },
+            "returnParameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "587:0:0"
+            },
+            "scope": 64,
+            "src": "524:113:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 62,
+              "nodeType": "Block",
+              "src": "717:48:0",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "baseExpression": {
+                        "id": 57,
+                        "name": "assetByID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "734:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                          "typeString": "mapping(string memory => struct Assets.Asset storage ref)"
+                        }
+                      },
+                      "id": 59,
+                      "indexExpression": {
+                        "id": 58,
+                        "name": "_ID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 52,
+                        "src": "744:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "734:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$11_storage",
+                        "typeString": "struct Assets.Asset storage ref"
+                      }
+                    },
+                    "id": 60,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "lastPrice",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 10,
+                    "src": "734:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 56,
+                  "id": 61,
+                  "nodeType": "Return",
+                  "src": "727:31:0"
+                }
+              ]
+            },
+            "functionSelector": "2aedd0eb",
+            "id": 63,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAssetPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 53,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 63,
+                  "src": "666:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 51,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:19:0"
+            },
+            "returnParameters": {
+              "id": 56,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 55,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 63,
+                  "src": "708:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "708:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "707:9:0"
+            },
+            "scope": 64,
+            "src": "643:122:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 65,
+        "src": "64:703:0"
+      }
+    ],
+    "src": "39:729:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Assets.sol",
+    "exportedSymbols": {
+      "Assets": [
+        64
+      ]
+    },
+    "id": 65,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 64,
+        "linearizedBaseContracts": [
+          64
+        ],
+        "name": "Assets",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Assets.AssetType",
+            "id": 4,
+            "members": [
+              {
+                "id": 2,
+                "name": "Equity",
+                "nodeType": "EnumValue",
+                "src": "102:6:0"
+              },
+              {
+                "id": 3,
+                "name": "Digital",
+                "nodeType": "EnumValue",
+                "src": "110:7:0"
+              }
+            ],
+            "name": "AssetType",
+            "nodeType": "EnumDefinition",
+            "src": "86:32:0"
+          },
+          {
+            "canonicalName": "Assets.Asset",
+            "id": 11,
+            "members": [
+              {
+                "constant": false,
+                "id": 6,
+                "mutability": "mutable",
+                "name": "ID",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "147:9:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 5,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "147:6:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 8,
+                "mutability": "mutable",
+                "name": "assetType",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "166:19:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_AssetType_$4",
+                  "typeString": "enum Assets.AssetType"
+                },
+                "typeName": {
+                  "id": 7,
+                  "name": "AssetType",
+                  "nodeType": "UserDefinedTypeName",
+                  "referencedDeclaration": 4,
+                  "src": "166:9:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AssetType_$4",
+                    "typeString": "enum Assets.AssetType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 10,
+                "mutability": "mutable",
+                "name": "lastPrice",
+                "nodeType": "VariableDeclaration",
+                "scope": 11,
+                "src": "195:17:0",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 9,
+                  "name": "uint256",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "195:7:0",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Asset",
+            "nodeType": "StructDefinition",
+            "scope": 64,
+            "src": "124:95:0",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 15,
+            "mutability": "mutable",
+            "name": "assetByID",
+            "nodeType": "VariableDeclaration",
+            "scope": 64,
+            "src": "225:34:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+              "typeString": "mapping(string => struct Assets.Asset)"
+            },
+            "typeName": {
+              "id": 14,
+              "keyType": {
+                "id": 12,
+                "name": "string",
+                "nodeType": "ElementaryTypeName",
+                "src": "233:6:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "225:24:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                "typeString": "mapping(string => struct Assets.Asset)"
+              },
+              "valueType": {
+                "id": 13,
+                "name": "Asset",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 11,
+                "src": "243:5:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Asset_$11_storage_ptr",
+                  "typeString": "struct Assets.Asset"
+                }
+              }
+            },
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 34,
+              "nodeType": "Block",
+              "src": "380:138:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 32,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "baseExpression": {
+                        "id": 24,
+                        "name": "assetByID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "390:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                          "typeString": "mapping(string memory => struct Assets.Asset storage ref)"
+                        }
+                      },
+                      "id": 26,
+                      "indexExpression": {
+                        "id": 25,
+                        "name": "_ID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 17,
+                        "src": "400:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "nodeType": "IndexAccess",
+                      "src": "390:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$11_storage",
+                        "typeString": "struct Assets.Asset storage ref"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "arguments": [
+                        {
+                          "id": 28,
+                          "name": "_ID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 17,
+                          "src": "431:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        {
+                          "id": 29,
+                          "name": "_assetType",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 19,
+                          "src": "459:10:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_enum$_AssetType_$4",
+                            "typeString": "enum Assets.AssetType"
+                          }
+                        },
+                        {
+                          "id": 30,
+                          "name": "_value",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 21,
+                          "src": "494:6:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": [
+                          {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          },
+                          {
+                            "typeIdentifier": "t_enum$_AssetType_$4",
+                            "typeString": "enum Assets.AssetType"
+                          },
+                          {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        ],
+                        "id": 27,
+                        "name": "Asset",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 11,
+                        "src": "407:5:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_struct$_Asset_$11_storage_ptr_$",
+                          "typeString": "type(struct Assets.Asset storage pointer)"
+                        }
+                      },
+                      "id": 31,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "kind": "structConstructorCall",
+                      "lValueRequested": false,
+                      "names": [
+                        "ID",
+                        "assetType",
+                        "lastPrice"
+                      ],
+                      "nodeType": "FunctionCall",
+                      "src": "407:104:0",
+                      "tryCall": false,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$11_memory_ptr",
+                        "typeString": "struct Assets.Asset memory"
+                      }
+                    },
+                    "src": "390:121:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Asset_$11_storage",
+                      "typeString": "struct Assets.Asset storage ref"
+                    }
+                  },
+                  "id": 33,
+                  "nodeType": "ExpressionStatement",
+                  "src": "390:121:0"
+                }
+              ]
+            },
+            "functionSelector": "ce72fb73",
+            "id": 35,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "addAsset",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 22,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 17,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "293:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 16,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "293:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 19,
+                  "mutability": "mutable",
+                  "name": "_assetType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "320:20:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_AssetType_$4",
+                    "typeString": "enum Assets.AssetType"
+                  },
+                  "typeName": {
+                    "id": 18,
+                    "name": "AssetType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 4,
+                    "src": "320:9:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_AssetType_$4",
+                      "typeString": "enum Assets.AssetType"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 21,
+                  "mutability": "mutable",
+                  "name": "_value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 35,
+                  "src": "350:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 20,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "350:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "283:87:0"
+            },
+            "returnParameters": {
+              "id": 23,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "380:0:0"
+            },
+            "scope": 64,
+            "src": "266:252:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 49,
+              "nodeType": "Block",
+              "src": "587:50:0",
+              "statements": [
+                {
+                  "expression": {
+                    "id": 47,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "expression": {
+                        "baseExpression": {
+                          "id": 42,
+                          "name": "assetByID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 15,
+                          "src": "597:9:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                            "typeString": "mapping(string memory => struct Assets.Asset storage ref)"
+                          }
+                        },
+                        "id": 44,
+                        "indexExpression": {
+                          "id": 43,
+                          "name": "_ID",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 37,
+                          "src": "607:3:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_string_memory_ptr",
+                            "typeString": "string memory"
+                          }
+                        },
+                        "isConstant": false,
+                        "isLValue": true,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "nodeType": "IndexAccess",
+                        "src": "597:14:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Asset_$11_storage",
+                          "typeString": "struct Assets.Asset storage ref"
+                        }
+                      },
+                      "id": 45,
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": true,
+                      "memberName": "lastPrice",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": 10,
+                      "src": "597:24:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "id": 46,
+                      "name": "_price",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 39,
+                      "src": "624:6:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
+                    },
+                    "src": "597:33:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 48,
+                  "nodeType": "ExpressionStatement",
+                  "src": "597:33:0"
+                }
+              ]
+            },
+            "functionSelector": "b5651c1d",
+            "id": 50,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "markAsset",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 40,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 37,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "543:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 36,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "543:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 39,
+                  "mutability": "mutable",
+                  "name": "_price",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 50,
+                  "src": "562:14:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 38,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "562:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "542:35:0"
+            },
+            "returnParameters": {
+              "id": 41,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "587:0:0"
+            },
+            "scope": 64,
+            "src": "524:113:0",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": {
+              "id": 62,
+              "nodeType": "Block",
+              "src": "717:48:0",
+              "statements": [
+                {
+                  "expression": {
+                    "expression": {
+                      "baseExpression": {
+                        "id": 57,
+                        "name": "assetByID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 15,
+                        "src": "734:9:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_mapping$_t_string_memory_ptr_$_t_struct$_Asset_$11_storage_$",
+                          "typeString": "mapping(string memory => struct Assets.Asset storage ref)"
+                        }
+                      },
+                      "id": 59,
+                      "indexExpression": {
+                        "id": 58,
+                        "name": "_ID",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 52,
+                        "src": "744:3:0",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_memory_ptr",
+                          "typeString": "string memory"
+                        }
+                      },
+                      "isConstant": false,
+                      "isLValue": true,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "IndexAccess",
+                      "src": "734:14:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_Asset_$11_storage",
+                        "typeString": "struct Assets.Asset storage ref"
+                      }
+                    },
+                    "id": 60,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "lastPrice",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 10,
+                    "src": "734:24:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "functionReturnParameters": 56,
+                  "id": 61,
+                  "nodeType": "Return",
+                  "src": "727:31:0"
+                }
+              ]
+            },
+            "functionSelector": "2aedd0eb",
+            "id": 63,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAssetPrice",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 53,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 52,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 63,
+                  "src": "666:17:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 51,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "666:6:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "665:19:0"
+            },
+            "returnParameters": {
+              "id": 56,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 55,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 63,
+                  "src": "708:7:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 54,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "708:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "707:9:0"
+            },
+            "scope": 64,
+            "src": "643:122:0",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 65,
+        "src": "64:703:0"
+      }
+    ],
+    "src": "39:729:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-24T19:23:39.232Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

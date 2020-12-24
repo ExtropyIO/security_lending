@@ -1,0 +1,63 @@
+{
+    "contractName": "LoanItem",
+    "abi": [],
+    "metadata": "{\"compiler\":{\"version\":\"0.7.5+commit.eb77ed08\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanItem.sol\":\"LoanItem\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanItem.sol\":{\"keccak256\":\"0x21599c18628e3faadee5eb839c513acf538a4ad6f34aa3303f6fd951168feb3d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f2af75f13199d2dec7381ecaede7b56c914e7d9add8f52f530c2f3b5491bbafb\",\"dweb:/ipfs/QmUWn18X2VyExJy1W5ew9jq8NSF2nY8zmgt3PEuXbmuMzK\"]}},\"version\":1}",
+    "bytecode": "6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212202e168f2f76b25a61dffbdffb123f9f78a1164b5fac2bbb8c8361158c3f5f02f464736f6c63430007050033",
+    "deployedBytecode": "6080604052600080fdfea26469706673582212202e168f2f76b25a61dffbdffb123f9f78a1164b5fac2bbb8c8361158c3f5f02f464736f6c63430007050033",
+    "sourceMap": "182:22:2:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "182:22:2:-:0;;;;;",
+    "sourcePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanItem.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.7.5+commit.eb77ed08"
+    },
+    "ast": {
+        "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanItem.sol",
+        "exportedSymbols": {
+            "LoanItem": [
+                8
+            ]
+        },
+        "id": 9,
+        "license": "UNLICENSED",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 7,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.7",
+                    ".0"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "39:23:2"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 8,
+                "linearizedBaseContracts": [
+                    8
+                ],
+                "name": "LoanItem",
+                "nodeType": "ContractDefinition",
+                "nodes": [],
+                "scope": 9,
+                "src": "182:22:2"
+            }
+        ],
+        "src": "39:166:2"
+    },
+    "functionHashes": {},
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "12600",
+            "executionCost": "66",
+            "totalCost": "12666"
+        }
+    }
+}

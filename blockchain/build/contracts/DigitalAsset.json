@@ -1,0 +1,373 @@
+{
+  "contractName": "DigitalAsset",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "_ID",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"_ID\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/DigitalAsset.sol\":\"DigitalAsset\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol\":{\"keccak256\":\"0x08755388550357ba6644bf0b674012712b4146725b1495de11191ba64d6fc03b\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://24f7c222f98aa302fe5bc362f7d508accf583e15f9ff46890a66ae6f27c17042\",\"dweb:/ipfs/QmYanBLUdjJXchM17Yt5BmJR8ppL9wgfdKJgpmHZR6ZNMj\"]},\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/DigitalAsset.sol\":{\"keccak256\":\"0xe8e611814040d532d6e79a728f8667483b68667eb54a44608f70b3e930a79429\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://09345f87df755a36c9e5a214c5304a4144070c15db07b8e11c23c660b7cb8eca\",\"dweb:/ipfs/QmPn8qTUXTKr5VtxwvRkvpKQ5y1F85hCvegvTmwxaGSWwp\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516102053803806102058339818101604052602081101561003357600080fd5b810190808051604051939291908464010000000082111561005357600080fd5b8382019150602082018581111561006957600080fd5b825186600182028301116401000000008211171561008657600080fd5b8083526020830192505050908051906020019080838360005b838110156100ba57808201518184015260208101905061009f565b50505050905090810190601f1680156100e75780820380516001836020036101000a031916815260200191505b5060405250505080806000908051906020019061010592919061010d565b5050506101b8565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282610143576000855561018a565b82601f1061015c57805160ff191683800117855561018a565b8280016001018555821561018a579182015b8281111561018957825182559160200191906001019061016e565b5b509050610197919061019b565b5090565b5b808211156101b457600081600090555060010161019c565b5090565b603f806101c66000396000f3fe6080604052600080fdfea264697066735822122072ca2d4c7e7fe307387a2aabbc0c7251c493b715cbe61bb40f4b296ed6cf107364736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122072ca2d4c7e7fe307387a2aabbc0c7251c493b715cbe61bb40f4b296ed6cf107364736f6c63430007040033",
+  "immutableReferences": {},
+  "sourceMap": "86:95:3:-:0;;;123:56;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;159:3;140::0;135:2;:8;;;;;;;;;;;;:::i;:::-;;98:48;123:56:3;86:95;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;:::o;:::-;;;;;;;;;;;;;;;;;;;;;:::o;:::-;;;;;;;",
+  "deployedSourceMap": "86:95:3:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.7.0;\nimport \"./Asset.sol\";\n\ncontract DigitalAsset is Asset {\n    constructor(string memory _ID)Asset(_ID){\n        \n    }\n}\n",
+  "sourcePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/DigitalAsset.sol",
+  "ast": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/DigitalAsset.sol",
+    "exportedSymbols": {
+      "Asset": [
+        14
+      ],
+      "DigitalAsset": [
+        40
+      ]
+    },
+    "id": 41,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 27,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:3"
+      },
+      {
+        "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol",
+        "file": "./Asset.sol",
+        "id": 28,
+        "nodeType": "ImportDirective",
+        "scope": 41,
+        "sourceUnit": 15,
+        "src": "63:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 29,
+              "name": "Asset",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 14,
+              "src": "111:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Asset_$14",
+                "typeString": "contract Asset"
+              }
+            },
+            "id": 30,
+            "nodeType": "InheritanceSpecifier",
+            "src": "111:5:3"
+          }
+        ],
+        "contractDependencies": [
+          14
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 40,
+        "linearizedBaseContracts": [
+          40,
+          14
+        ],
+        "name": "DigitalAsset",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 38,
+              "nodeType": "Block",
+              "src": "163:16:3",
+              "statements": []
+            },
+            "id": 39,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 35,
+                    "name": "_ID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 32,
+                    "src": "159:3:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  }
+                ],
+                "id": 36,
+                "modifierName": {
+                  "id": 34,
+                  "name": "Asset",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 14,
+                  "src": "153:5:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Asset_$14_$",
+                    "typeString": "type(contract Asset)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "153:10:3"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 32,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "135:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "135:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "134:19:3"
+            },
+            "returnParameters": {
+              "id": 37,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "163:0:3"
+            },
+            "scope": 40,
+            "src": "123:56:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 41,
+        "src": "86:95:3"
+      }
+    ],
+    "src": "39:143:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/DigitalAsset.sol",
+    "exportedSymbols": {
+      "Asset": [
+        14
+      ],
+      "DigitalAsset": [
+        40
+      ]
+    },
+    "id": 41,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 27,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:3"
+      },
+      {
+        "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Asset.sol",
+        "file": "./Asset.sol",
+        "id": 28,
+        "nodeType": "ImportDirective",
+        "scope": 41,
+        "sourceUnit": 15,
+        "src": "63:21:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "baseName": {
+              "id": 29,
+              "name": "Asset",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 14,
+              "src": "111:5:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Asset_$14",
+                "typeString": "contract Asset"
+              }
+            },
+            "id": 30,
+            "nodeType": "InheritanceSpecifier",
+            "src": "111:5:3"
+          }
+        ],
+        "contractDependencies": [
+          14
+        ],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 40,
+        "linearizedBaseContracts": [
+          40,
+          14
+        ],
+        "name": "DigitalAsset",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 38,
+              "nodeType": "Block",
+              "src": "163:16:3",
+              "statements": []
+            },
+            "id": 39,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [
+              {
+                "arguments": [
+                  {
+                    "id": 35,
+                    "name": "_ID",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 32,
+                    "src": "159:3:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_memory_ptr",
+                      "typeString": "string memory"
+                    }
+                  }
+                ],
+                "id": 36,
+                "modifierName": {
+                  "id": 34,
+                  "name": "Asset",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 14,
+                  "src": "153:5:3",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_type$_t_contract$_Asset_$14_$",
+                    "typeString": "type(contract Asset)"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "153:10:3"
+              }
+            ],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 33,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 32,
+                  "mutability": "mutable",
+                  "name": "_ID",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 39,
+                  "src": "135:17:3",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 31,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "135:6:3",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "134:19:3"
+            },
+            "returnParameters": {
+              "id": 37,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "163:0:3"
+            },
+            "scope": 40,
+            "src": "123:56:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 41,
+        "src": "86:95:3"
+      }
+    ],
+    "src": "39:143:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-21T20:44:19.018Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

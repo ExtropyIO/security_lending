@@ -1,0 +1,163 @@
+{
+  "contractName": "LoanValueHistory",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.7.4+commit.3f05b770\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanValueHistory.sol\":\"LoanValueHistory\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Assets.sol\":{\"keccak256\":\"0xa3f7ad5123373be1672188bac446538507cc389d195dd45b363175f1bf975132\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://593f159f1f6499d73c2169aaca9053445d32f82f55ae70c03883c31b962a8eb9\",\"dweb:/ipfs/QmbfJoW1pz2YAKpUoUkvQiLJ5QFDQyMxHtei7Pp98SU2Uk\"]},\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanValueHistory.sol\":{\"keccak256\":\"0x4bd9c41be8257f63161d9075d997a65b09dcef8c0909bec53a7f9e986911c7d9\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://f0c61e20109c47cfdfc501dda217343c5a69c4d607097054a4a371454e91861d\",\"dweb:/ipfs/QmeEe2f2FryWXQWermRyLQ8hFSToDVwrc7ToaXp16SCwui\"]},\"/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Loans.sol\":{\"keccak256\":\"0x0d7060d28ba9927e5bd44ae0917c16121b9b56f15e0d0dd88565ddb1d6af240d\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://2251801a1c798e74dc372af9575f9e37847c16baf2a8294475d930c6cec8e30a\",\"dweb:/ipfs/QmZj6tr4tUwqayRpsqs17zWm44of4Jg4qQJLA7SbN4hJhG\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212206a2d32ab8c9526e7a7af97262b9702bc7e87396e2704931863a70d65be100ece64736f6c63430007040033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212206a2d32ab8c9526e7a7af97262b9702bc7e87396e2704931863a70d65be100ece64736f6c63430007040033",
+  "immutableReferences": {},
+  "sourceMap": "121:541:2:-:0;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "121:541:2:-:0;;;;;",
+  "source": "// SPDX-License-Identifier: UNLICENSED\npragma solidity ^0.7.0;\npragma experimental ABIEncoderV2;\n\nimport \"./Loans.sol\";\n\ncontract LoanValueHistory {\n    // mapping(string => uint256[]) loanValues;\n    // Loans loanContract;\n    // Assets assets;\n    // constructor(Loans _LoanContract, Assets _Assets){\n    //     loanContract = _LoanContract;\n    //     assets = _Assets;\n    // }\n    // function priceLoan(uint256 _ID) external returns (uint256) {\n    //     Loans.Loan memory thisLoan = loanContract.getLoanByID(_ID);\n    //     Asset loanedAsset = thisLoan.loanedAsset;\n    //     uint256 loanedAssetPrice = assetPrices.getAssetPrice(loanedAsset.)\n    // }\n}\n",
+  "sourcePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanValueHistory.sol",
+  "ast": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanValueHistory.sol",
+    "exportedSymbols": {
+      "Assets": [
+        56
+      ],
+      "LoanValueHistory": [
+        135
+      ],
+      "Loans": [
+        267
+      ]
+    },
+    "id": 136,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 132,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:2"
+      },
+      {
+        "id": 133,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "63:33:2"
+      },
+      {
+        "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Loans.sol",
+        "file": "./Loans.sol",
+        "id": 134,
+        "nodeType": "ImportDirective",
+        "scope": 136,
+        "sourceUnit": 268,
+        "src": "98:21:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 135,
+        "linearizedBaseContracts": [
+          135
+        ],
+        "name": "LoanValueHistory",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 136,
+        "src": "121:541:2"
+      }
+    ],
+    "src": "39:624:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/LoanValueHistory.sol",
+    "exportedSymbols": {
+      "Assets": [
+        56
+      ],
+      "LoanValueHistory": [
+        135
+      ],
+      "Loans": [
+        267
+      ]
+    },
+    "id": 136,
+    "license": "UNLICENSED",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 132,
+        "literals": [
+          "solidity",
+          "^",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "39:23:2"
+      },
+      {
+        "id": 133,
+        "literals": [
+          "experimental",
+          "ABIEncoderV2"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "63:33:2"
+      },
+      {
+        "absolutePath": "/home/laurence/Work/Projects/sec_lending/blockchain/contracts/Loans.sol",
+        "file": "./Loans.sol",
+        "id": 134,
+        "nodeType": "ImportDirective",
+        "scope": 136,
+        "sourceUnit": 268,
+        "src": "98:21:2",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "fullyImplemented": true,
+        "id": 135,
+        "linearizedBaseContracts": [
+          135
+        ],
+        "name": "LoanValueHistory",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 136,
+        "src": "121:541:2"
+      }
+    ],
+    "src": "39:624:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.7.4+commit.3f05b770.Linux.g++"
+  },
+  "networks": {},
+  "schemaVersion": "3.1.0",
+  "updatedAt": "2020-11-24T19:17:20.391Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}
